@@ -1,0 +1,134 @@
+.specification {
+  padding: 0 20px;
+
+
+  @media (min-width: $tablet-width) {
+    padding: 0 105px 47px 30px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 106px 69px 110px;
+    border: none;
+  }
+}
+
+.specification__title {
+  @include title;
+  font-family: $secondary-font;
+  color: $basic-color;
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 32px;
+  }
+}
+
+.specification__list {
+  @include reset-list;
+  padding-bottom: 49px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(2, 324px);
+    gap: 37px 60px;
+    counter-reset: chapter 0;
+    padding-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include flex;
+    align-items: baseline;
+    gap: 30px 78px;
+  }
+}
+
+
+.specification__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 41px;
+    padding-bottom: 56px;
+    counter-increment: chapter;
+    width: 245px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    &--change {
+      width: 249px;
+      padding-left: 2px;
+    }
+
+    &--effect {
+      width: 250px;
+    }
+  }
+
+  &--effect {
+    margin-bottom: 0;
+  }
+}
+
+.specification__item::before {
+  content: "";
+  display: block;
+  background-color: $accent-color;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-right: 20px;
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 31px;
+  }
+}
+
+.specification__item--nutrition::before {
+  background-image: url("../../icons/stack.svg#icon-nutrition");
+  background-size: 30px 32px;
+}
+
+.specification__item--powder::before {
+  background-image: url("../../icons/stack.svg#icon-powder");
+  background-size: 26px 29px;
+}
+
+.specification__item--change::before {
+  background-image: url("../../icons/stack.svg#icon-change");
+  background-size: 25px 30px;
+}
+
+.specification__item--effect::before {
+  background-image: url("../../icons/stack.svg#icon-effect");
+  background-size: 25px 30px;
+}
+
+.specification__item::after {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    content: counter(chapter);
+    left: 115px;
+    top: 0;
+    font-family: $secondary-font;
+    font-size: 280px;
+    line-height: 280px;
+    color: $bacground-color;
+    z-index: -1;
+  }
+}

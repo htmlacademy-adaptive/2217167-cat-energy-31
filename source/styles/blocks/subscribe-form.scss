@@ -1,0 +1,68 @@
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: center;
+    width: 632px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 752px;
+  }
+}
+
+.subscribe-form__label {
+  display: block;
+  margin: 0 auto;
+}
+
+.subscribe-form__field {
+  min-width: 280px;
+  font-family: $secondary-font;
+  color: $primary-color;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: uppercase;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #e7e7e7;
+
+  @media (min-width: $tablet-width) {
+    min-width: 376px;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-width: 496px;
+  }
+
+  &:hover {
+    border: 1px solid #cdcdcd;
+    outline: none;
+  }
+
+  &:focus-visible {
+    border: 1px solid $primary-color;
+  }
+
+  &--error {
+    border: 1px solid #ff8282;
+  }
+}
+
+.subscribe-form__button {
+  display: block;
+  width: 280px;
+  font-size: 20px;
+  line-height: 26px;
+  padding: 15px 26px;
+  border: none;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    margin: 0;
+  }
+}

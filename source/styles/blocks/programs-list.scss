@@ -1,0 +1,34 @@
+.programs-list {
+  padding: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 30px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    @include flex-between;
+    width: 1440px;
+    gap: 40px;
+    padding: 82px 110px 71px;
+    margin: 0 auto;
+  }
+}
+
+.programs-list__item {
+  background-color: $bacground-color;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 570px;
+    margin-bottom: 0;
+  }
+}
+
+.programs-list__item:last-child {
+  margin-bottom: 0;
+}
